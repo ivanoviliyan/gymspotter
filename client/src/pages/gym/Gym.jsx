@@ -61,7 +61,7 @@ const Gym = ({ match }) => {
 
 	const history = useHistory();
 
-	const handleRemove = () => {
+	const handleDelete = () => {
 		if (window.confirm('Are you sure you want to delete this gym?')) {
 			axios
 				.delete(`/gyms/${match.params.id}`, {
@@ -93,7 +93,7 @@ const Gym = ({ match }) => {
 					<>
 						<div className='crud'>
 							<p className='crud-p'>You are allowed to delete current gym!</p>
-							<button onClick={handleRemove}>Remove</button>
+							<button onClick={handleDelete}>Delete</button>
 						</div>
 					</>
 				)}

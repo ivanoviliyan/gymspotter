@@ -19,25 +19,6 @@ const Navbar = () => {
 		return () => (window.onscroll = null);
 	};
 
-	const [user, setUser] = useState(null);
-	useEffect(() => {
-		async function fetchUser() {
-			try {
-				const response = await axios.get('/users/me', {
-					headers: {
-						Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-					},
-				});
-				const { username, email, isAdmin, profilePic } = response.data;
-				setUser({ username, email, isAdmin, profilePic });
-			} catch (error) {
-				console.error(error);
-			}
-		}
-
-		fetchUser();
-	}, []);
-
 	return (
 		<header className={isScrolled ? 'navbar scrolled' : 'navbar'}>
 			<img className='logo' src='https://svgshare.com/i/sFF.svg' alt='logo' />

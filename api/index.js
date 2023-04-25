@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
 const gymRoute = require('./routes/gyms');
-const cors = require('cors');
 
 dotenv.config();
 
@@ -18,11 +17,7 @@ mongoose
 	.catch((err) => console.log(err));
 
 app.use(express.json());
-app.use(
-	cors({
-		origin: 'http//localhost:3000',
-	})
-);
+
 app.use('/api/auth', authRoute);
 app.use('/api/users', userRoute);
 app.use('/api/gyms', gymRoute);
