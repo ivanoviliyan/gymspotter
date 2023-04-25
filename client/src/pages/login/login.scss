@@ -1,0 +1,76 @@
+.login {
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 5em;
+	flex-wrap: wrap;
+	.logo {
+		width: 300px;
+		padding-bottom: 1.5em;
+	}
+	.wrapper {
+		form {
+			display: flex;
+			flex-direction: column;
+			padding: 3em 5em;
+			border-radius: 20px;
+			margin-top: 20px;
+			-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+			h1 {
+				color: #f2f2f2;
+			}
+			input {
+				text-align: center;
+				padding: 15px 25px;
+				border: none;
+				border-radius: 5px;
+				margin: 5px 0;
+				font-size: 16px;
+			}
+			.singInBtn {
+				padding: 15px 25px;
+				box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+					rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+					rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+				color: #f2f2f2;
+				background-color: rgb(75, 94, 199);
+				border: none;
+				border-radius: 5px;
+				margin: 20px 0;
+				cursor: pointer;
+				font-size: 18px;
+				font-weight: 600;
+				&:hover {
+					background-color: transparent;
+					box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+						rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+					scale: 0.99;
+				}
+			}
+			.new-user {
+				font-weight: bold;
+				font-size: 1.5em;
+				color: #f2f2f2;
+				.new-user-b {
+					text-decoration: underline;
+					color: rgb(222, 225, 243);
+					&:hover {
+						color: rgb(174, 184, 243);
+					}
+				}
+			}
+		}
+	}
+}

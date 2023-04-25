@@ -1,0 +1,103 @@
+.rating-form {
+	font-size: 1.2em;
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	padding-top: 7em;
+	gap: 1.5em;
+	.container {
+		display: flex;
+		gap: 2em;
+		.wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 1.3em;
+			font-weight: bold;
+			color: #E6E6E6;
+			gap: 1.3em;
+			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+			padding: 0.8em;
+			border-radius: 20px;
+			img {
+				padding: 0.2em;
+				border-radius: 20px;
+				width: 250px;
+				height: 250px;
+				box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+					rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+			}
+			p {
+				span {
+					color: rgb(243, 243, 159);
+				}
+			}
+		}
+	}
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.4em;
+		padding: 2em;
+		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+		border-radius: 20px;
+
+		.headling {
+			color: #f2f2f2;
+			font-weight: bold;
+			display: flex;
+			gap: 1.5em;
+			input {
+				width: 3.5em;
+				color: rgb(243, 243, 159);
+				background-color: rgb(75, 94, 199);
+				border: none;
+				text-decoration: none;
+				text-align: center;
+				font-size: 1em;
+				box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+					rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+				font-weight: bold;
+				padding: 0.5em;
+			}
+			span {
+				text-transform: uppercase;
+				flex: 1;
+				color: rgb(243, 243, 159);
+			}
+		}
+	}
+	button {
+		border-radius: 10px;
+		padding: 1.5em;
+		border: none;
+		background-color: rgb(75, 94, 199);
+		cursor: pointer;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+			rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+			rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		font-size: 1em;
+		text-transform: uppercase;
+		color: #f2f2f2;
+		font-weight: bold;
+		&:hover {
+			background-color: transparent;
+			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+			scale: 0.99;
+		}
+	}
+}

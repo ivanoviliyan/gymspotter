@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* navigation styles start here */
+
+.navbar {
+	font-size: 32px;
+	padding: 0.5em 0;
+	text-align: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	&.scrolled {
+		background-image: linear-gradient(
+			to right,
+			#065e9f,
+			#055895,
+			#05528b,
+			#054d82,
+			#054778
+		);
+		box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+			rgba(0, 0, 0, 0.05) 0px 5px 10px;
+		opacity: 0.95;
+	}
+}
+
+.logo {
+	width: 250px;
+	height: auto;
+}
+// &.scrolled {
+// }
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+	position: absolute !important;
+	top: -9999px !important;
+	left: -9999px !important;
+}
+
+.nav-toggle-label {
+	position: absolute;
+	top: -0.7em;
+	left: 0.5em;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	display: block;
+	background: white;
+	height: 3px;
+	width: 1em;
+	border-radius: 2px;
+	position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	content: '';
+	position: absolute;
+}
+
+.nav-toggle-label span::before {
+	bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+	top: 7px;
+}
+
+nav {
+	padding-top: 15px;
+	position: absolute;
+	text-align: left;
+	top: 100%;
+	left: 0;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	width: 100%;
+	transform: scale(1, 0);
+	transform-origin: top;
+	transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+nav .listitem {
+	margin-bottom: 1em;
+	margin-left: 1em;
+	span {
+		color: white;
+		text-decoration: none;
+		font-size: 1.2rem;
+		font-weight: bold;
+		&:hover {
+			cursor: pointer;
+			color: #054778;
+		}
+	}
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2rem;
+	opacity: 0;
+	font-weight: bold;
+}
+
+nav a:hover {
+	color: rgb(243, 243, 159);
+}
+
+.nav-toggle:checked ~ nav {
+	transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+	opacity: 1;
+	transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+	.nav-toggle-label {
+		display: none;
+	}
+
+	header {
+		display: grid;
+		grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+	}
+
+	.logo {
+		width: 200px;
+		height: auto;
+		grid-column: 2 / 3;
+	}
+
+	nav {
+		position: relative;
+		text-align: left;
+		transition: none;
+		transform: scale(1, 1);
+		background: none;
+		top: initial;
+		left: initial;
+		/* end Edge support stuff */
+
+		grid-column: 3 / 4;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	nav .listitem {
+		margin-left: 3em;
+		margin-bottom: 0;
+		span {
+			color: white;
+			text-decoration: none;
+			font-size: 1.2rem;
+			font-weight: bold;
+			&:hover {
+				cursor: pointer;
+				color: rgb(243, 243, 159);
+			}
+		}
+	}
+
+	nav a {
+		opacity: 1;
+		position: relative;
+	}
+}

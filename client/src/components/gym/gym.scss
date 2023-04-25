@@ -1,0 +1,54 @@
+.card {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	transition: 0.3s;
+	width: 250px;
+	height: 330px;
+	margin: 10px 25px;
+	padding: 25px;
+	text-align: center;
+	border-radius: 20px;
+	color: #2f4858;
+	background-color: #f2f2f2;
+
+	&:hover {
+		background-color: transparent;
+		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+
+		cursor: pointer;
+		scale: 1.02;
+		border-radius: 20px;
+		h2 {
+			color: #f2f2f2;
+		}
+		p {
+			margin-top: 5px;
+			font-weight: bold;
+			color: rgb(243, 243, 159);
+		}
+	}
+
+	img {
+		width: 150px;
+		height: 150px;
+		object-fit: cover;
+		margin-bottom: 10px;
+		border-radius: 10px;
+		box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+			rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+			rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+	}
+
+	p {
+		margin-top: 5px;
+		font-weight: bold;
+		color: #206a7c;
+	}
+	.location {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.2em;
+	}
+}

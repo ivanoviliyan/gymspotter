@@ -1,0 +1,95 @@
+.register {
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 5em;
+	.logo {
+		width: 300px;
+		padding-bottom: 1.5em;
+	}
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		padding: 3em 5em;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+		h1 {
+			color: #f2f2f2;
+		}
+
+		.singDiv {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			display: flex;
+			gap: 10px;
+			p {
+				font-size: 20px;
+				color: #f2f2f2;
+				font-weight: 700;
+				.link-link {
+					color: #f2f2f2;
+				}
+			}
+			.here {
+				border: none;
+				text-decoration: underline;
+				border-radius: 5px;
+				color: rgb(222, 225, 243);
+				font-size: 20px;
+				font-weight: 650;
+				cursor: pointer;
+				&:hover {
+					color: rgb(174, 184, 243);
+				}
+			}
+		}
+		.input {
+			display: flex;
+			gap: 15px;
+			input {
+				flex: 8;
+				padding: 15px;
+				border-radius: 10px;
+				border: none;
+				font-size: 16px;
+				-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+				box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+					rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+			}
+
+			.registerBtn {
+				flex: 4;
+				border-radius: 6px;
+				padding: 10px 20px;
+				border: none;
+				background-color: rgb(75, 94, 199);
+				color: #2f4858;
+				font-size: 16px;
+				font-weight: 600;
+				color: #f2f2f2;
+				box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+					rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+					rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+				cursor: pointer;
+				&:hover {
+					background-color: transparent;
+					-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+					box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+						rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+				}
+			}
+		}
+	}
+}
