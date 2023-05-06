@@ -8,12 +8,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext } from 'react';
 import { AuthContext } from '../../authContext/AuthContext';
 import { logout } from '../../authContext/AuthActions';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import axios from 'axios';
+
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const { dispatch } = useContext(AuthContext);
-
+	const userJSON = localStorage.getItem('user');
+	const user = JSON.parse(userJSON);
 	window.onscroll = () => {
 		setIsScrolled(window.pageYOffset === 0 ? false : true);
 		return () => (window.onscroll = null);
@@ -43,7 +43,16 @@ const Navbar = () => {
 
 					<li className='listitem'>
 						<Link to='/profile'>
-							<ManageAccountsIcon /> Profile
+							<div className='profile-pic'>
+								<img
+									src={
+										user.profilePic ||
+										'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+									}
+									alt=''
+								/>
+								Profile
+							</div>
 						</Link>
 					</li>
 

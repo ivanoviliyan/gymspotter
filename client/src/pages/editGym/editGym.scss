@@ -1,0 +1,101 @@
+.edit-gym {
+	width: 100vw;
+	height: 100%;
+	padding: 2em 20px;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+}
+.opening {
+	text-align: center;
+	text-transform: uppercase;
+	color: rgb(243, 243, 159);
+	font-size: 2em;
+	font-weight: bold;
+}
+.add-edit-container {
+	display: flex;
+	justify-content: center;
+	gap: 5em;
+	.content1,
+	.content2 {
+		display: flex;
+		flex-direction: column;
+		span {
+			margin-top: 10px;
+			color: #f2f2f2;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.is-featured {
+			margin-top: 10px;
+			display: flex;
+			gap: 1em;
+			label {
+				color: #f2f2f2;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+		input {
+			padding: 0.5em 0.7em;
+			border-radius: 10px;
+		}
+
+		.subs,
+		.services {
+			display: flex;
+			flex-direction: column;
+			font-weight: bold;
+			color: #f2f2f2;
+			gap: 0.4em;
+			label {
+				padding: 0 10px;
+			}
+			#yearly,
+			#monthly,
+			#daily,
+			#weights,
+			#cardio,
+			#classes,
+			#personal,
+			#pool {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+}
+.buttonclass {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	button {
+		width: 160px;
+		text-transform: uppercase;
+		padding: 15px 25px;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+			rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+			rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		color: #f2f2f2;
+		background-color: rgb(17, 139, 83);
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 600;
+		transition: 0.3s;
+		&:hover {
+			background-color: transparent;
+			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+			scale: 0.99;
+		}
+	}
+}

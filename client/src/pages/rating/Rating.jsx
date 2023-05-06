@@ -5,12 +5,13 @@ import Navbar from '../../components/navbar/Navbar';
 import GavelIcon from '@mui/icons-material/Gavel';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-const Rating = () => {
+const Rating = ({ match }) => {
 	let [cleanlinessRating, setCleanlinessRating] = useState(1);
 	let [staffRating, setStaffRating] = useState(1);
 	let [priceQualityRating, setPriceQualityRating] = useState(1);
 	let [locationRating, setLocationRating] = useState(1);
-
+	const userJSON = localStorage.getItem('user');
+	const user = JSON.parse(userJSON);
 	const history = useHistory();
 
 	function handleRatingChange(rating, setRating) {
@@ -42,7 +43,7 @@ const Rating = () => {
 		averageRate: 0,
 	});
 
-	const gymId = window.location.pathname.split('/').pop();
+	const gymId = match.params.id;
 
 	useEffect(() => {
 		const getGym = async () => {
@@ -53,7 +54,6 @@ const Rating = () => {
 							'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
 					},
 				});
-				console.log(res.data.title);
 				setGym(res.data);
 			} catch (err) {
 				console.log(err);
@@ -62,30 +62,70 @@ const Rating = () => {
 		getGym();
 	}, []);
 
-	const handleSubmit = () => {
-		const updatedGym = {
-			...gym,
-			rate: {
-				cleanliness: [...gym.rate.cleanliness, cleanlinessRating],
-				staff: [...gym.rate.staff, staffRating],
-				priceQuality: [...gym.rate.priceQuality, priceQualityRating],
-				locationPlace: [...gym.rate.locationPlace, locationRating],
-			},
+	const [ratedGyms, setRatedGyms] = useState([]);
+	useEffect(() => {
+		const getRated = async () => {
+			try {
+				const res = await axios.get(`/users/rated-gyms/${user._id}`, {
+					headers: {
+						token:
+							'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+					},
+				});
+				setRatedGyms(res.data);
+			} catch (err) {
+				console.log(err);
+			}
 		};
-		setGym(updatedGym);
-		const accessToken = JSON.parse(localStorage.getItem('user')).accessToken;
+		getRated();
+	}, []);
 
-		axios
-			.put(`/gyms/${gymId}`, updatedGym, {
-				headers: {
-					token: `Bearer ${accessToken}`,
+	const handleSubmit = () => {
+		const someGyms = ratedGyms.some((gym) => gym._id === gymId);
+
+		if (someGyms) {
+			window.alert(`You have already rated ${gym.title}.`);
+		} else {
+			const updatedGym = {
+				...gym,
+				rate: {
+					cleanliness: [...gym.rate.cleanliness, cleanlinessRating],
+					staff: [...gym.rate.staff, staffRating],
+					priceQuality: [...gym.rate.priceQuality, priceQualityRating],
+					locationPlace: [...gym.rate.locationPlace, locationRating],
 				},
-			})
-			.then(() => setTimeout(() => history.goBack(), 500))
-			.catch((error) => {
+			};
+			setGym(updatedGym);
+			const accessToken = JSON.parse(localStorage.getItem('user')).accessToken;
+			try {
+				axios
+					.put(
+						`/users/${user._id}/rate/${gymId}`,
+						{},
+						{
+							headers: { token: `Bearer ${accessToken}` },
+						}
+					)
+					.then(() => {
+						axios
+							.put(`/gyms/${gymId}`, updatedGym, {
+								headers: { token: `Bearer ${accessToken}` },
+							})
+							.then(() => setTimeout(() => history.goBack(), 500))
+							.catch((error) => {
+								console.log(error);
+								// Handle error
+							});
+					})
+					.catch((error) => {
+						console.log(error);
+						// Handle error
+					});
+			} catch (error) {
 				console.log(error);
 				// Handle error
-			});
+			}
+		}
 	};
 
 	return (

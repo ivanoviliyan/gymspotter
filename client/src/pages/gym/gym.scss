@@ -26,6 +26,7 @@
 			width: 250px;
 			height: 250px;
 			border-radius: 20px;
+			object-fit: cover;
 		}
 		.gym-title {
 			text-transform: uppercase;
@@ -59,19 +60,18 @@
 		}
 		width: 100%;
 	}
-
+	.crud-p {
+		text-transform: uppercase;
+		text-align: center;
+		color: #d1aeae;
+		text-decoration: underline;
+		font-size: 1.3em;
+		font-weight: 650;
+		padding: 10px 0;
+	}
 	.crud {
-		.crud-p {
-			text-transform: uppercase;
-			text-align: center;
-			color: #d1aeae;
-			text-decoration: underline;
-			font-size: 1.3em;
-			font-weight: 650;
-			padding: 10px 0;
-		}
 		display: flex;
-		flex-direction: column;
+		gap: 4em;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
@@ -100,12 +100,15 @@
 		}
 	}
 	.container {
+		width: 100%;
+		padding: 0 15%;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 2em;
 		.left {
+			flex: 1;
 			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
 				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
 			border-radius: 20px;
@@ -134,6 +137,7 @@
 			flex-direction: column;
 		}
 		.right {
+			flex: 1;
 			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
 				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
 			border-radius: 20px;
@@ -252,6 +256,15 @@
 			&::after {
 				text-decoration: none;
 			}
+		}
+	}
+	.paragraph {
+		p {
+			font-size: 2em;
+			font-weight: bold;
+			color: rgb(243, 243, 159);
+			text-transform: uppercase;
+			padding-top: 30px;
 		}
 	}
 }

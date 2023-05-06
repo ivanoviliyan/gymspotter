@@ -57,12 +57,14 @@ const Gym = ({ match }) => {
 
 	const userJSON = localStorage.getItem('user');
 	const user = JSON.parse(userJSON);
-	let { username, profilePic, isAdmin } = user;
+	let { username, profilePic, isAdmin, _id } = user;
 
 	const history = useHistory();
 
 	const handleDelete = () => {
-		if (window.confirm('Are you sure you want to delete this gym?')) {
+		const adminPass = 'root';
+		const input = window.prompt('Enter the admin passcode to delete the gym!');
+		if (input === adminPass) {
 			axios
 				.delete(`/gyms/${match.params.id}`, {
 					headers: {
@@ -74,7 +76,33 @@ const Gym = ({ match }) => {
 				.catch((error) => {
 					console.error(error);
 				});
+		} else {
+			window.alert('WRONG PASSCODE!');
 		}
+	};
+
+	const handleLikeUs = () => {
+		const gymId = match.params.id;
+		const userId = _id; // assuming _id is the user's ID
+		axios
+			.put(
+				`/users/${userId}/like/${gymId}`,
+				{},
+				{
+					headers: {
+						token:
+							'Bearer ' + JSON.parse(localStorage.getItem('user')).accessToken,
+					},
+				}
+			)
+			.then(window.alert(`You liked ${gym.title} gym!`))
+			.catch((error) => {
+				console.log(error);
+				// Handle error
+			});
+	};
+	const handleUpdate = () => {
+		history.push(`/edit-gym/${match.params.id}`);
 	};
 
 	return (
@@ -85,65 +113,78 @@ const Gym = ({ match }) => {
 					<h1 className='gym-title'>{gym.title || ''}</h1>
 					<img src={gym.img || ''} alt='logo' />
 					<div className='avrg-rate'>
-						Average <span className='rate'>{gym.averageRate.toFixed(2)}⭐</span>
+						<span className='rate'>
+							{gym.averageRate !== 0
+								? `Average ${gym.averageRate.toFixed(2)}⭐`
+								: 'Rate us for average score!'}
+						</span>
 					</div>
 				</div>
 
 				{isAdmin && (
 					<>
+						<p className='crud-p'>You see this when you have admin profile!</p>
 						<div className='crud'>
-							<p className='crud-p'>You are allowed to delete current gym!</p>
 							<button onClick={handleDelete}>Delete</button>
+							<button onClick={handleUpdate}>UPDATE</button>
 						</div>
 					</>
 				)}
+				<div className='paragraph'>
+					<p>Average rates</p>
+				</div>
 				<div className='rate'>
 					<div className='single-rate'>
 						<span className='head'>Cleanliness </span>
 						<span className='rataing'>
-							{gym.rate &&
-								(
-									gym.rate.cleanliness &&
-									gym.rate.cleanliness.reduce((acc, val) => acc + val, 0) /
-										gym.rate.cleanliness.length
-								).toFixed(2)}
-							⭐
+							{gym.rate.cleanliness.length !== 0
+								? gym.rate &&
+								  (
+										gym.rate.cleanliness &&
+										gym.rate.cleanliness.reduce((acc, val) => acc + val, 0) /
+											gym.rate.cleanliness.length
+								  ).toFixed(2) + '⭐'
+								: 'Rate us first!'}
 						</span>
 					</div>
+
 					<div className='single-rate'>
 						<span className='head'>Staff </span>
 						<span className='rataing'>
-							{(
-								gym.rate &&
-								gym.rate.staff &&
-								gym.rate.staff.reduce((acc, val) => acc + val, 0) /
-									gym.rate.staff.length
-							).toFixed(2)}
-							⭐
+							{gym.rate.staff.length !== 0
+								? (
+										gym.rate &&
+										gym.rate.staff &&
+										gym.rate.staff.reduce((acc, val) => acc + val, 0) /
+											gym.rate.staff.length
+								  ).toFixed(2) + '⭐'
+								: 'Rate us first!'}
 						</span>
 					</div>
 					<div className='single-rate'>
 						<span className='head'>Price/ Quality </span>
 						<span className='rataing'>
-							{(
-								gym.rate &&
-								gym.rate.priceQuality &&
-								gym.rate.priceQuality.reduce((acc, val) => acc + val, 0) /
-									gym.rate.priceQuality.length
-							).toFixed(2)}
-							⭐
+							{gym.rate.priceQuality.length !== 0
+								? (
+										gym.rate &&
+										gym.rate.priceQuality &&
+										gym.rate.priceQuality.reduce((acc, val) => acc + val, 0) /
+											gym.rate.priceQuality.length
+								  ).toFixed(2) + '⭐'
+								: 'Rate us first!'}
 						</span>
 					</div>
 					<div className='single-rate'>
 						<span className='head'>Location/ Place </span>
 						<span className='rataing'>
-							{(
-								gym.rate &&
-								gym.rate.locationPlace &&
-								gym.rate.locationPlace.reduce((acc, val) => acc + val, 0) /
-									gym.rate.locationPlace.length
-							).toFixed(2)}
-							⭐
+							{gym.rate.locationPlace.length !== 0
+								? (
+										gym.rate &&
+										gym.rate.locationPlace &&
+										gym.rate.locationPlace.reduce((acc, val) => acc + val, 0) /
+											gym.rate.locationPlace.length
+								  ).toFixed(2) + '⭐'
+								: 'Rate us first!'}
 						</span>
 					</div>
 				</div>
@@ -151,7 +192,9 @@ const Gym = ({ match }) => {
 					<Link to={`/rate/${match.params.id}`}>
 						<button className='rate-it'>Rate us!</button>
 					</Link>{' '}
-					<button className='like-it'>Like us!</button>
+					<button className='like-it' onClick={handleLikeUs}>
+						Like us!
+					</button>
 				</div>
 				<div className='container'>
 					<div className='left'>

@@ -10,6 +10,10 @@ import RatingForm from './pages/rating/Rating';
 import { useContext } from 'react';
 import { AuthContext } from './authContext/AuthContext';
 import Profile from './pages/profile/Profile';
+import EditProfilePage from './pages/editProfile/EditProfile';
+import EditGym from './pages/editGym/EditGym';
+import Search from './pages/search/Search';
+import About from './pages/about/About';
 
 const App = () => {
 	const { user } = useContext(AuthContext);
@@ -23,9 +27,15 @@ const App = () => {
 					{!user ? <Register /> : <Redirect to='/' />}
 				</Route>
 				<Route path='/profile' component={Profile} />
+				<Route exact path='/edit-profile'>
+					<EditProfilePage />
+				</Route>
 				<Route path='/login'>{!user ? <Login /> : <Redirect to='/' />}</Route>
 				<Route path='/gyms/:id' component={Gym}></Route>
 				<Route path='/rate/:id' component={RatingForm}></Route>
+				<Route path='/edit-gym/:id' component={EditGym}></Route>
+				<Route path='/search' component={Search}></Route>
+				<Route path='/about' component={About}></Route>
 			</Switch>
 		</Router>
 	);

@@ -15,10 +15,14 @@ const updateAverageGrades = async () => {
 			locationPlace.reduce((acc, val) => acc + val, 0) / locationPlace.length;
 		const total = cleanAvg + staffAvg + priceQualityAvg + locationPlaceAvg;
 		const average = total / 4;
-		gym.averageRate = average.toFixed(2);
+		const gymAverage = Number(average.toFixed(2));
+		if (!isNaN(gymAverage)) {
+			gym.averageRate = gymAverage;
+		}
 	});
 	await Promise.all(gyms.map((gym) => gym.save()));
 };
+
 
 //CREATE
 router.post('', verify, async (req, res) => {
@@ -27,7 +31,6 @@ router.post('', verify, async (req, res) => {
 		try {
 			const savedGym = await newGym.save();
 			res.status(201).json(savedGym);
-			updateAverageGrades();
 		} catch (err) {
 			res.status(500).json(err);
 		}

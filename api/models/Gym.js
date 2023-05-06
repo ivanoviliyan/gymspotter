@@ -23,7 +23,7 @@ const GymSchema = new mongoose.Schema(
 			priceQuality: { type: Array },
 			locationPlace: { type: Array },
 		},
-		averageRate: { type: Number, default: 0 },
+		averageRate: { type: Number, default: 0, required: false },
 		isFeatured: { type: Boolean, default: false },
 	},
 	{ timestamps: true }

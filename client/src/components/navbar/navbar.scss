@@ -98,12 +98,28 @@ nav {
 
 nav ul {
 	margin: 0;
-	padding: 0;
+	padding: 20px 0 0 0;
 	list-style: none;
 	text-align: center;
 }
 
 nav .listitem {
+	.profile-pic {
+		margin-bottom: 6.5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.65em;
+		img {
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			border-radius: 50%;
+			width: 45px;
+			height: 45px;
+			object-fit: cover;
+		}
+	}
 	margin-bottom: 1em;
 	margin-left: 1em;
 	span {
@@ -140,46 +156,55 @@ nav a:hover {
 }
 
 @media screen and (min-width: 800px) {
+	.navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px 15%;
+		.logo {
+			width: 200px;
+			height: auto;
+		}
+	}
 	.nav-toggle-label {
 		display: none;
 	}
 
-	header {
-		display: grid;
-		grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-	}
-
-	.logo {
-		width: 200px;
-		height: auto;
-		grid-column: 2 / 3;
-	}
-
 	nav {
-		position: relative;
-		text-align: left;
-		transition: none;
+		display: flex;
 		transform: scale(1, 1);
 		background: none;
 		top: initial;
 		left: initial;
 		/* end Edge support stuff */
-
-		grid-column: 3 / 4;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
 	}
 
 	nav ul {
+		padding-left: 20%;
+		gap: 1em;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
+
 		align-items: center;
 	}
 
 	nav .listitem {
-		margin-left: 3em;
-		margin-bottom: 0;
+		.profile-pic {
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			gap: 0.65em;
+			img {
+				box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+					rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+					rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+				border-radius: 50%;
+				width: 40px;
+				height: 40px;
+				object-fit: cover;
+			}
+		}
+
 		span {
 			color: white;
 			text-decoration: none;

@@ -1,0 +1,105 @@
+.about-page {
+	padding: 0 15%;
+	.headling-p {
+		text-align: center;
+		font-weight: bold;
+		color: #f2f2f2;
+		padding-top: 1.7em;
+		font-size: 1.3em;
+		text-transform: uppercase;
+	}
+	padding-top: 7.5em;
+	font-size: 1.2em;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	height: 100%;
+	.technologies {
+		padding-top: 0.8em;
+		display: flex;
+		gap: 1.5em;
+		justify-content: center;
+		align-items: center;
+		.item {
+			flex-direction: column;
+			align-items: center;
+			text-align: justify;
+			justify-content: center;
+			padding: 15px;
+			border-radius: 20px;
+			display: flex;
+			height: 350px;
+			width: 300px;
+			background-color: #f3f3f3;
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			img {
+				object-fit: contain;
+				width: 250px;
+				height: auto;
+				animation: rotation 0.5s linear;
+				transform: rotate(3deg);
+			}
+			p {
+				animation: rotation 0.7s linear;
+				display: none;
+				font-weight: bold;
+				color: black;
+				padding: 30px;
+			}
+			&:hover {
+				cursor: pointer;
+				p {
+					display: flex;
+					font-size: 1.2em;
+					text-transform: uppercase;
+				}
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+	.about-owner {
+		padding: 20px;
+		margin-top: 0.8em;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+		border-radius: 20px;
+		img {
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			width: 250px;
+			height: 250px;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+		div {
+			display: flex;
+			flex-direction: column;
+
+			gap: 0.4em;
+			font-size: 1.2em;
+			color: #f2f2f2;
+			font-weight: bold;
+			span {
+				font-size: 1.5em;
+			}
+			.span-owner {
+				color: rgb(243, 243, 159);
+				font-size: 1em;
+			}
+		}
+	}
+}

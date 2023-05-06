@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema(
 		profilePic: { type: String, default: '' },
 		isAdmin: { type: Boolean, default: false },
 		likedGyms: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Gym' }],
+		ratedGyms: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Gym' }],
 	},
 	{ timestamps: true }
 );

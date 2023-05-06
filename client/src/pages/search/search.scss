@@ -1,0 +1,185 @@
+.search-page {
+	h1 {
+		color: rgb(243, 243, 159);
+		text-transform: uppercase;
+	}
+	padding-top: 7.5em;
+	font-size: 1.2em;
+	background-image: linear-gradient(
+		to right top,
+		#0072c6,
+		#0275c9,
+		#0477cc,
+		#067ad0,
+		#087dd3
+	);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	img {
+		width: 200px;
+	}
+	.container {
+		flex-wrap: wrap;
+		display: flex;
+		padding-top: 2em;
+		gap: 3em;
+		justify-content: center;
+
+		.search-bar {
+			form {
+				display: flex;
+				gap: 0.3em;
+				button {
+					border-radius: 20px;
+					padding: 1em;
+					border: none;
+					background-color: rgb(75, 94, 199);
+					cursor: pointer;
+					box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+						rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+						rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+					font-size: 1em;
+					text-transform: uppercase;
+					color: #f2f2f2;
+					font-weight: bold;
+					&:hover {
+						background-color: transparent;
+						box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+							rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+						scale: 0.99;
+					}
+				}
+				input {
+					border-radius: 20px;
+					border: none;
+					box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+						rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+					background-color: transparent;
+					padding: 1em;
+					font-size: 1em;
+					color: #f2f2f2;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	.radio-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.2em;
+		padding-top: 2em;
+		font-weight: bold;
+		color: #f2f2f2;
+		display: flex;
+		gap: 1em;
+		div {
+			label {
+				display: flex;
+				align-items: center;
+				gap: 0.2em;
+			}
+		}
+		.rate-search {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1em;
+			input {
+				width: 3.5em;
+				border-radius: 20px;
+				color: rgb(243, 243, 159);
+				background-color: rgb(75, 94, 199);
+				border: none;
+				text-decoration: none;
+				text-align: center;
+				font-size: 1em;
+				box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+					rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+				font-weight: bold;
+				padding: 0.5em;
+			}
+		}
+		button {
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			border: none;
+			background-color: rgb(75, 199, 137);
+			cursor: pointer;
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			font-size: 1em;
+			text-transform: uppercase;
+			color: #f2f2f2;
+			font-weight: bold;
+			&:hover {
+				background-color: transparent;
+				box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+					rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+				scale: 0.99;
+			}
+		}
+	}
+	.searched-gyms {
+		overflow: auto; /* Enable scrolling */
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 1.5em;
+		border-radius: 20px;
+		width: 80%;
+		height: 500px;
+		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+		background-color: transparent;
+		.searched-item {
+			gap: 1em;
+			margin: 20px;
+			padding: 15px;
+			width: 200px;
+			height: 295px;
+			box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+				rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+				rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+			border-radius: 20px;
+			div {
+				gap: 0.6em;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				img {
+					width: 150px;
+					height: 150px;
+					object-fit: cover;
+					border-radius: 30px;
+				}
+				span {
+					color: #f2f2f2;
+					font-weight: bold;
+					&:first-of-type {
+						text-transform: uppercase;
+						color: rgb(243, 243, 159);
+					}
+				}
+				&:hover {
+					scale: 1.01;
+					span {
+						color: rgb(243, 243, 159);
+					}
+				}
+			}
+			&:hover {
+				box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+					rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+				cursor: pointer;
+				background-color: rgba(181, 145, 238, 0.5);
+				scale: 1.01;
+			}
+		}
+	}
+}

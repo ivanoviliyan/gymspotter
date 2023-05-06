@@ -34,6 +34,16 @@ const Featured = () => {
 						<Link className='link' to={`/gyms/${gym._id}`} key={gym._id}>
 							<div className='featured-card'>
 								<img src={gym.img} alt={gym.title} />
+								<div className='logo-gymspotter'>
+									<h3>{gym.title}</h3>
+									<img
+										className='logo-gymspotter-logo'
+										src='https://svgshare.com/i/sFF.svg'
+										alt='logo'
+									/>
+									<h3>CLICK!</h3>
+								</div>
+
 								<h3>Rate: {gym.averageRate}⭐</h3>
 								<h3 className='title'>{gym.title}</h3>
 								<p>
