@@ -4,6 +4,14 @@
 	padding: 1em;
 	border-radius: 20px;
 	flex: 2;
+	background-image: linear-gradient(
+		to right top,
+		#0970b9,
+		#096eb6,
+		#096db3,
+		#0a6bb1,
+		#0a6aae
+	);
 }
 .opening {
 	text-align: center;
@@ -36,7 +44,8 @@
 				text-transform: uppercase;
 			}
 		}
-		input {
+		input,
+		select {
 			padding: 0.5em 0.7em;
 			border-radius: 10px;
 		}

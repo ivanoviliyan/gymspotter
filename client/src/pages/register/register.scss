@@ -18,6 +18,14 @@
 		padding-bottom: 1.5em;
 	}
 	.wrapper {
+		background-image: linear-gradient(
+			to right top,
+			#0970b9,
+			#096eb6,
+			#096db3,
+			#0a6bb1,
+			#0a6aae
+		);
 		display: flex;
 		flex-direction: column;
 		padding: 3em 5em;

@@ -17,6 +17,14 @@
 	);
 	padding: 8.5em 0 0.1em 0;
 	.admin {
+		background-image: linear-gradient(
+			to right top,
+			#0970b9,
+			#096eb6,
+			#096db3,
+			#0a6bb1,
+			#0a6aae
+		);
 		border-radius: 20px;
 		padding: 1% 5%;
 		margin: 2% 10%;
@@ -89,7 +97,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
+		gap: 1em;
 		.left {
+			background-image: linear-gradient(
+				to right top,
+				#0970b9,
+				#096eb6,
+				#096db3,
+				#0a6bb1,
+				#0a6aae
+			);
 			width: 40%;
 			height: 500px;
 			overflow: auto; /* Enable scrolling */
@@ -116,6 +133,14 @@
 				gap: 20px;
 				padding: 20px 20px;
 				.single-like {
+					background-image: linear-gradient(
+						to right top,
+						#0072c6,
+						#0275c9,
+						#0477cc,
+						#067ad0,
+						#087dd3
+					);
 					box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
 						rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 					padding: 20px;
@@ -178,6 +203,14 @@
 			}
 		}
 		.right {
+			background-image: linear-gradient(
+				to right top,
+				#0970b9,
+				#096eb6,
+				#096db3,
+				#0a6bb1,
+				#0a6aae
+			);
 			width: 55%;
 			height: 500px;
 			overflow: auto; /* Enable scrolling */
@@ -205,6 +238,14 @@
 				gap: 20px;
 				padding: 20px 20px;
 				.single-like {
+					background-image: linear-gradient(
+						to right top,
+						#0072c6,
+						#0275c9,
+						#0477cc,
+						#067ad0,
+						#087dd3
+					);
 					box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
 						rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 					padding: 20px;

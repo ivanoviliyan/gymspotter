@@ -86,6 +86,7 @@ const Rating = ({ match }) => {
 
 		if (someGyms) {
 			window.alert(`You have already rated ${gym.title}.`);
+			setTimeout(() => history.goBack(), 300);
 		} else {
 			const updatedGym = {
 				...gym,

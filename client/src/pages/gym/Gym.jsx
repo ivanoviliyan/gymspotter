@@ -110,6 +110,15 @@ const Gym = ({ match }) => {
 		<>
 			<Navbar />
 			<div class='page'>
+				{isAdmin && (
+					<>
+						<p className='crud-p'>You see this when you have admin profile!</p>
+						<div className='crud'>
+							<button onClick={handleDelete}>Delete</button>
+							<button onClick={handleUpdate}>UPDATE</button>
+						</div>
+					</>
+				)}
 				<div className='title'>
 					<h1 className='gym-title'>{gym.title || ''}</h1>
 					<img src={gym.img || ''} alt='logo' />
@@ -122,15 +131,6 @@ const Gym = ({ match }) => {
 					</div>
 				</div>
 
-				{isAdmin && (
-					<>
-						<p className='crud-p'>You see this when you have admin profile!</p>
-						<div className='crud'>
-							<button onClick={handleDelete}>Delete</button>
-							<button onClick={handleUpdate}>UPDATE</button>
-						</div>
-					</>
-				)}
 				<div className='paragraph'>
 					<p>Average rates</p>
 				</div>

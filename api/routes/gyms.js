@@ -23,7 +23,6 @@ const updateAverageGrades = async () => {
 	await Promise.all(gyms.map((gym) => gym.save()));
 };
 
-
 //CREATE
 router.post('', verify, async (req, res) => {
 	if (req.user.isAdmin) {
@@ -133,7 +132,7 @@ router.get('/', verify, async (req, res) => {
 			try {
 				const gyms = await Gym.aggregate([
 					{ $match: { isFeatured: true } },
-					{ $sample: { size: 3 } },
+					{ $sample: { size: 4 } },
 				]);
 				res.status(200).json(gyms);
 			} catch (err) {

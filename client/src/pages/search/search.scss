@@ -56,10 +56,17 @@
 					border: none;
 					box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
 						rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
-					background-color: transparent;
+					background-image: linear-gradient(
+						to right top,
+						#0970b9,
+						#096eb6,
+						#096db3,
+						#0a6bb1,
+						#0a6aae
+					);
 					padding: 1em;
 					font-size: 1em;
-					color: #f2f2f2;
+					color: #ffffff;
 					font-weight: bold;
 				}
 			}
@@ -91,7 +98,7 @@
 				width: 3.5em;
 				border-radius: 20px;
 				color: rgb(243, 243, 159);
-				background-color: rgb(75, 94, 199);
+
 				border: none;
 				text-decoration: none;
 				text-align: center;
@@ -125,6 +132,14 @@
 		}
 	}
 	.searched-gyms {
+		background-image: linear-gradient(
+			to right top,
+			#0970b9,
+			#096eb6,
+			#096db3,
+			#0a6bb1,
+			#0a6aae
+		);
 		overflow: auto; /* Enable scrolling */
 		display: flex;
 		flex-wrap: wrap;
@@ -136,8 +151,15 @@
 		margin-bottom: 1.5em;
 		box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
 			rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
-		background-color: transparent;
 		.searched-item {
+			background-image: linear-gradient(
+				to right top,
+				#0072c6,
+				#0275c9,
+				#0477cc,
+				#067ad0,
+				#087dd3
+			);
 			gap: 1em;
 			margin: 20px;
 			padding: 15px;

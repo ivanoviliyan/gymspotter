@@ -5,6 +5,8 @@ import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { AuthContext } from '../../authContext/AuthContext';
 import { logout } from '../../authContext/AuthActions';
 import { useContext } from 'react';
+import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 const EditProfile = () => {
 	const { dispatch } = useContext(AuthContext);
 	const userJSON = localStorage.getItem('user');
@@ -50,6 +52,7 @@ const EditProfile = () => {
 
 	return (
 		<>
+			<Navbar />
 			<div className='edit-profile-page'>
 				{!isAdmin ? (
 					<p>
@@ -93,6 +96,7 @@ const EditProfile = () => {
 					</Link>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

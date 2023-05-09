@@ -26,7 +26,6 @@ function AddGym() {
 
 	function handleContactInputChange(event) {
 		const { name, value } = event.target;
-		console.log('name:', name, 'value:', value);
 		setGymData((prevData) => ({
 			...prevData,
 			contact: {
@@ -50,7 +49,10 @@ function AddGym() {
 		const value = event.target.value;
 
 		if (isChecked) {
-			setSubs((prevSubs) => [...prevSubs, value]);
+			const firstLetter = value[0].toUpperCase();
+			const letters = value.slice(1);
+			const newValue = firstLetter + letters;
+			setSubs((prevSubs) => [...prevSubs, newValue]);
 		} else {
 			setSubs((prevSubs) => prevSubs.filter((sub) => sub !== value));
 		}
@@ -76,9 +78,62 @@ function AddGym() {
 	const history = useHistory();
 	function handleSubmit(event) {
 		event.preventDefault();
+
+		const phoneRegex = /^\+359\s\d{3}\s\d{2}\s\d{2}\s\d{2}$/;
+		const mailRegex = /^\S+@\S+\.\S+$/;
+		const facebookRegex =
+			/^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9(\.\?)?]/i;
+		const instagramRegex =
+			/^(https?:\/\/)?(www\.)?instagram\.com\/[a-zA-Z0-9(\.\?)?]/i;
+		const imgURLRegex = /\.(jpeg|jpg|png|gif|bmp|webp)(\?.*)?$/i;
+		const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+		const isValidTime = timeRegex.test('09:30'); // true
+
+		if (gymData.contact.phone && !phoneRegex.test(gymData.contact.phone)) {
+			alert('Please enter a valid phone number');
+			return;
+		}
+		if (gymData.contact.email && !mailRegex.test(gymData.contact.email)) {
+			alert('Please enter a valid email address');
+			return;
+		}
+		if (
+			gymData.contact.facebook &&
+			!facebookRegex.test(gymData.contact.facebook)
+		) {
+			alert('Please enter a valid facebook URL');
+			return;
+		}
+		if (
+			gymData.contact.instagram &&
+			!instagramRegex.test(gymData.contact.instagram)
+		) {
+			alert('Please enter a valid instagram URL');
+			return;
+		}
+		if (gymData.img && !imgURLRegex.test(gymData.img)) {
+			alert('Please enter a valid image URL');
+			return;
+		}
+		if (!gymData.location) {
+			alert('Please select a location.');
+			return;
+		}
+		if (!gymData.workTimeOpen && !isValidTime.test(gymData.workTimeOpen)) {
+			alert('Time is in wrong format! -> HH:MM');
+			return;
+		}
+		if (!gymData.workTimeOpen && !isValidTime.test(gymData.workTimeClose)) {
+			alert('Time is in wrong format! -> HH:MM');
+			return;
+		}
+		// Validate other fields as needed
+		// ...
+
 		gymData.subscription = subs;
 		gymData.service = service;
 		gymData.isFeatured = isFeatured;
+
 		// Call an API or do something with the gymData
 		axios
 			.post('/gyms', gymData, {
@@ -125,13 +180,36 @@ function AddGym() {
 						onChange={handleInputChange}
 					/>
 					<span>Location</span>
-					<input
-						type='text'
-						name='location'
-						id=''
-						placeholder='Gym location'
-						onChange={handleInputChange}
-					/>
+					<select name='location' onChange={handleInputChange}>
+						<option value=''>--Select a location--</option>
+						<option value='Благоевград'>Благоевград</option>
+						<option value='Бургас'>Бургас</option>
+						<option value='Варна'>Варна</option>
+						<option value='Велико Търново'>Велико Търново</option>
+						<option value='Видин'>Видин</option>
+						<option value='Враца '>Враца </option>
+						<option value='Габрово'>Габрово</option>
+						<option value='Добрич'>Добрич</option>
+						<option value='Кърджали'>Кърджали</option>
+						<option value='Кюстендил'>Кюстендил</option>
+						<option value='Ловеч'>Ловеч</option>
+						<option value='Монтана'>Монтана</option>
+						<option value='Пазарджик'>Пазарджик</option>
+						<option value='Плевен'>Плевен</option>
+						<option value='Перник'>Перник</option>
+						<option value='Пловдив'>Пловдив</option>
+						<option value='Разград'>Разград</option>
+						<option value='Русе'>Русе</option>
+						<option value='Силистра'>Силистра</option>
+						<option value='Сливен'>Сливен</option>
+						<option value='Смолян'>Смолян</option>
+						<option value='София'>София</option>
+						<option value='Стара Загора'>Стара Загора</option>
+						<option value='Търговище'>Търговище</option>
+						<option value='Хасково'>Хасково</option>
+						<option value='Шумен'>Шумен</option>
+						<option value='Ямбол'>Ямбол</option>
+					</select>
 					<span>address</span>
 					<input
 						type='text'
@@ -223,7 +301,7 @@ function AddGym() {
 								type='checkbox'
 								id='weights'
 								name='weights'
-								value='weights'
+								value='Weight training'
 								onChange={handleCheckboxChangeService}
 							></input>
 							<label for='weights'>Weight training</label>
@@ -233,7 +311,7 @@ function AddGym() {
 								type='checkbox'
 								id='cardio'
 								name='cardio'
-								value='cardio'
+								value='Cardiovascular training'
 								onChange={handleCheckboxChangeService}
 							></input>
 							<label for='cardio'>Cardiovascular training</label>
@@ -243,7 +321,7 @@ function AddGym() {
 								type='checkbox'
 								id='classes'
 								name='classes'
-								value='classes'
+								value='Group fitness classes'
 								onChange={handleCheckboxChangeService}
 							></input>
 							<label for='classes'>Group fitness classes</label>
@@ -253,7 +331,7 @@ function AddGym() {
 								type='checkbox'
 								id='personal'
 								name='personal'
-								value='personal'
+								value='Personal training'
 								onChange={handleCheckboxChangeService}
 							></input>
 							<label for='personal'>Personal training</label>
@@ -263,7 +341,7 @@ function AddGym() {
 								type='checkbox'
 								id='pool'
 								name='pool'
-								value='pool'
+								value='Pool access'
 								onChange={handleCheckboxChangeService}
 							></input>
 							<label for='pool'>Pool access</label>
