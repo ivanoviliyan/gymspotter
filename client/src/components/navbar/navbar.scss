@@ -24,7 +24,7 @@
 		);
 		box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
 			rgba(0, 0, 0, 0.05) 0px 5px 10px;
-		opacity: 0.95;
+		opacity: 0.98;
 	}
 }
 
@@ -134,16 +134,17 @@ nav .listitem {
 	}
 }
 
-nav a {
-	color: white;
-	text-decoration: none;
-	font-size: 1.2rem;
-	opacity: 0;
-	font-weight: bold;
-}
-
-nav a:hover {
-	color: rgb(243, 243, 159);
+nav {
+	a {
+		color: white;
+		text-decoration: none;
+		font-size: 1.2rem;
+		opacity: 0;
+		font-weight: bold;
+		&:hover {
+			color: rgb(243, 243, 159);
+		}
+	}
 }
 
 .nav-toggle:checked ~ nav {
@@ -157,10 +158,12 @@ nav a:hover {
 
 @media screen and (min-width: 800px) {
 	.navbar {
+		padding: 0.5em 15%;
+		width: 100vw;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 20px 15%;
+		align-items: center;
 		.logo {
 			width: 200px;
 			height: auto;
@@ -184,7 +187,6 @@ nav a:hover {
 		gap: 1em;
 		display: flex;
 		justify-content: flex-end;
-
 		align-items: center;
 	}
 
@@ -192,6 +194,7 @@ nav a:hover {
 		.profile-pic {
 			display: flex;
 			align-items: flex-end;
+			padding-bottom: 0.3em;
 			justify-content: center;
 			gap: 0.65em;
 			img {

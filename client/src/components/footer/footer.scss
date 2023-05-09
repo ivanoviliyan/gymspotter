@@ -7,11 +7,11 @@
 		#054d82,
 		#054778
 	);
-	padding: 2em 15%;
+	padding: 2em 10% 1em 10%;
 	.social-links {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
 		color: #333;
 		p {
 			color: #f2f2f2;
@@ -33,6 +33,88 @@
 					cursor: pointer;
 				}
 			}
+		}
+	}
+	.links-gym {
+		h3 {
+			color: #f2f2f2;
+		}
+		span {
+			font-weight: bold;
+			color: rgb(190, 212, 212);
+			font-size: 1.1em;
+		}
+		justify-content: space-between;
+		display: flex;
+		height: 100px;
+		margin-top: 2em;
+		.company {
+			display: flex;
+			flex-direction: column;
+			.logo-footer {
+				width: 180px;
+			}
+		}
+		.footer-nav {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5em;
+			div {
+				display: flex;
+				justify-content: center;
+				gap: 1.5em;
+			}
+			span {
+				text-decoration: underline;
+				&:hover {
+					color: rgb(243, 243, 159);
+					cursor: pointer;
+					scale: 1.05;
+				}
+			}
+		}
+		.contacts {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.copy-right {
+		width: 110%;
+		padding-top: 1em;
+		display: flex;
+		align-items: center;
+	}
+
+	.copy-right h3 {
+		text-align: center;
+		flex-grow: 1;
+		text-transform: uppercase;
+		color: #f2f2f2;
+	}
+
+	.copy-right button {
+		margin-right: 5%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-transform: uppercase;
+		padding: 15px 25px;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+			rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+			rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		color: #f2f2f2;
+		background-color: #065e9f;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: 600;
+		&:hover {
+			background-color: transparent;
+			box-shadow: rgb(6, 43, 80) 3px 3px 6px 0px inset,
+				rgba(43, 30, 63, 0.5) -3px -3px 6px 1px inset;
+			scale: 0.99;
 		}
 	}
 }
