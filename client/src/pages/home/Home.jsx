@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.scss';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import Featured from '../../components/featured/Featured';
 import List from '../../components/list/List';
 import { useState, useEffect } from 'react';
@@ -31,6 +32,7 @@ const Home = () => {
 			<Navbar />
 			<Featured />
 			<List gyms={gyms} />
+			<Footer />
 		</div>
 	);
 };

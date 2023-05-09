@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import './profile.scss';
 import axios from 'axios';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -167,6 +168,7 @@ const Profile = () => {
 					)}
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

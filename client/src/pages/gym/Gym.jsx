@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './gym.scss';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import {
 	Home,
 	Subscriptions,
@@ -269,6 +270,7 @@ const Gym = ({ match }) => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

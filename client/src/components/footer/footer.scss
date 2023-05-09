@@ -1,0 +1,38 @@
+.footer {
+	background-image: linear-gradient(
+		to right,
+		#065e9f,
+		#055895,
+		#05528b,
+		#054d82,
+		#054778
+	);
+	padding: 2em 15%;
+	.social-links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: #333;
+		p {
+			color: #f2f2f2;
+			font-size: 1.1em;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.social {
+			color: #f2f2f2;
+			display: flex;
+			gap: 1.5em;
+			span {
+				width: 2em;
+				height: 2em;
+				&:hover {
+					color: rgb(243, 243, 159);
+					opacity: 0.9;
+					scale: 1.1;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

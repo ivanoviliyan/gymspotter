@@ -2,6 +2,7 @@ import './rating.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import GavelIcon from '@mui/icons-material/Gavel';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -208,6 +209,7 @@ const Rating = ({ match }) => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

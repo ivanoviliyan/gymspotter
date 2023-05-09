@@ -1,6 +1,7 @@
 import './search.scss';
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/navbar/Navbar';
+import Footer from '../../components/footer/Footer';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import axios from 'axios';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
@@ -134,6 +135,7 @@ const Search = () => {
 					))}
 				</div>
 			</div>
+			<Footer />
 		</>
 	);
 };

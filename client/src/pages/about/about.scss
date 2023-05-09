@@ -1,10 +1,10 @@
 .about-page {
-	padding: 0 15%;
+	padding: 0 15% 20px 15%;
 	.headling-p {
 		text-align: center;
 		font-weight: bold;
-		color: #f2f2f2;
-		padding-top: 1.7em;
+		color: rgb(243, 243, 159);
+		padding: 1.3em 0;
 		font-size: 1.3em;
 		text-transform: uppercase;
 	}
@@ -19,6 +19,40 @@
 		#087dd3
 	);
 	height: 100%;
+	.about-app {
+		justify-content: center;
+		display: flex;
+		flex-wrap: wrap;
+		.article {
+			padding: 2em;
+			text-align: justify;
+			-webkit-box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.02);
+			box-shadow: rgb(5, 91, 177) 3px 3px 6px 0px inset,
+				rgba(181, 145, 238, 0.5) -3px -3px 6px 1px inset;
+			border-radius: 20px;
+			p {
+				font-weight: bold;
+				color: #f2f2f2;
+				font-size: 0.8em;
+				p {
+					font-size: 1.2em;
+					padding-bottom: 0.5em;
+					text-align: center;
+					color: rgb(243, 243, 159);
+				}
+			}
+		}
+		.gymspotter-logo {
+			padding: 0.5em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			img {
+				width: 300px;
+			}
+		}
+	}
 	.technologies {
 		padding-top: 0.8em;
 		display: flex;
@@ -68,7 +102,6 @@
 	}
 	.about-owner {
 		padding: 20px;
-		margin-top: 0.8em;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
