@@ -28,9 +28,12 @@ const GymList = () => {
 			<h1>Newest Gyms:</h1>
 			<div className='gyms'>
 				<div className='gym-list'>
-					{gyms.slice(0, 8).map((gym) => (
-						<Gym key={gym._id} gym={gym} />
-					))}
+					{gyms
+						.slice(0, 10)
+						.reverse()
+						.map((gym) => (
+							<Gym key={gym._id} gym={gym} />
+						))}
 				</div>
 			</div>
 		</>

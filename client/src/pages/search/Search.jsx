@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import { LocationOn } from '@mui/icons-material';
 
 const Search = () => {
 	const [gym, setGym] = useState([]);
@@ -73,9 +74,9 @@ const Search = () => {
 				<div className='container'>
 					<div className='search-bar'>
 						<form>
+							<label htmlFor='searchBtTitle'>Title:</label>
 							<input
 								type='text'
-								placeholder='Search by title'
 								value={titleQuery}
 								onChange={handleTitleChange}
 							/>
@@ -83,9 +84,9 @@ const Search = () => {
 					</div>
 					<div className='search-bar'>
 						<form>
+							<label htmlFor='searchBtLocation'>Location:</label>
 							<input
 								type='text'
-								placeholder='Search by city'
 								value={cityQuery}
 								onChange={handleCityChange}
 							/>
@@ -128,7 +129,10 @@ const Search = () => {
 									<img src={item.img} alt='' />
 									<span>Rate: {item.averageRate}⭐</span>
 									<span>{item.title}</span>
-									<span>{item.location}</span>
+									<span>
+										<LocationOn />
+										{item.location}
+									</span>
 								</div>
 							</Link>
 						</div>

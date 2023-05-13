@@ -79,8 +79,8 @@ function AddGym() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		const phoneRegex = /^\+359\s\d{3}\s\d{2}\s\d{2}\s\d{2}$/;
-		const mailRegex = /^\S+@\S+\.\S+$/;
+		const phoneRegex = /\+359\s\d{2}\s\d{3}\s\d{4}$/;
+		const mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 		const facebookRegex =
 			/^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9(\.\?)?]/i;
 		const instagramRegex =

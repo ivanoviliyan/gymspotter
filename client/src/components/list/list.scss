@@ -8,9 +8,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	overflow-x: scroll;
-	scroll-behavior: smooth;
-	scroll-snap-type: x mandatory;
 }
 h1 {
 	text-align: center;

@@ -33,7 +33,7 @@ const Featured = () => {
 					{gyms.map((gym) => (
 						<Link className='link' to={`/gyms/${gym._id}`} key={gym._id}>
 							<div className='featured-card'>
-								<img src={gym.img} alt={gym.title} />
+								<img src={gym.img ? gym.img : '/owner.png'} alt={gym.title} />
 								<div className='logo-gymspotter'>
 									<h3>{gym.title}</h3>
 									<img

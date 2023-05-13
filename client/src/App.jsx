@@ -23,19 +23,27 @@ const App = () => {
 				<Route exact path='/'>
 					{user ? <Home /> : <Redirect to='/register' />}
 				</Route>
-				<Route path='/register'>
-					{!user ? <Register /> : <Redirect to='/' />}
+				<Route exact path='/search'>
+					{user ? <Search /> : <Redirect to='/register' />}
 				</Route>
-				<Route path='/profile' component={Profile} />
+				<Route exact path='/about'>
+					{user ? <About /> : <Redirect to='/register' />}
+				</Route>
+				<Route exact path='/profile'>
+					{user ? <Profile /> : <Redirect to='/register' />}
+				</Route>
 				<Route exact path='/edit-profile'>
-					<EditProfilePage />
+					{user ? <EditProfilePage /> : <Redirect to='/register' />}
 				</Route>
-				<Route path='/login'>{!user ? <Login /> : <Redirect to='/' />}</Route>
+
 				<Route path='/gyms/:id' component={Gym}></Route>
 				<Route path='/rate/:id' component={RatingForm}></Route>
 				<Route path='/edit-gym/:id' component={EditGym}></Route>
-				<Route path='/search' component={Search}></Route>
-				<Route path='/about' component={About}></Route>
+
+				<Route path='/login'>{!user ? <Login /> : <Redirect to='/' />}</Route>
+				<Route path='/register'>
+					{!user ? <Register /> : <Redirect to='/' />}
+				</Route>
 			</Switch>
 		</Router>
 	);
