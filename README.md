@@ -1,19 +1,18 @@
 ![logo](https://svgshare.com/i/tv3.svg "gymSpotter logo")
-Here is some of UI:
 ![landing-Page](https://i.ibb.co/QDHVVp7/landing-Page.png)
-![landing-Page2](https://i.ibb.co/ydYLCrS/landing-Page2.png)
+
 ![spotPage](https://i.ibb.co/jWFKvvW/spotPage.png)
-![about-Page](https://i.ibb.co/tC8SQ3d/about-Page.png)
+
 ![about-Page2](https://i.ibb.co/qyHmyg5/about-Page2.png)
 ![about-Page3](https://i.ibb.co/w69zH8s/about-Page3.png)
 ![edit-Profile-Page](https://i.ibb.co/PYbQkV3/edit-Profile-Page.png)
 ![edit-Profile-Page2](https://i.ibb.co/rkQ9rJT/edit-Profile-Page2.png)
 ![profile-Page](https://i.ibb.co/whdHBYm/profile-Page.png)
-![profile-Page2](https://i.ibb.co/hHFRnkn/profile-Page2.png)
+
 ![add-Gym-Component](https://i.ibb.co/m89hZqh/add-Gym-Component.png)
 ![ratePage](https://i.ibb.co/VWHTgXW/ratePage.png)
 ![signel-Gym](https://i.ibb.co/VYkj9Pk/signel-Gym.png)
 ![signel-Gym2](https://i.ibb.co/gdXtFKW/signel-Gym2.png)
 ![registration-Page](https://i.ibb.co/H7PSRp4/registration-Page.png)
-![sing-In-Page](https://i.ibb.co/yVt38pN/sing-In-Page.png)
+
 
