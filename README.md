@@ -1,4 +1,4 @@
-![diagram](https://i.ibb.co/Lx6mPrH/Untitled-Diagram-drawio.png)
+![diagram](https://i.ibb.co/8sXMd45/Untitled-Diagram-drawio-1.png)
 ![logo](https://svgshare.com/i/tv3.svg "gymSpotter logo")
 ![landing-Page](https://i.ibb.co/QDHVVp7/landing-Page.png)
 
